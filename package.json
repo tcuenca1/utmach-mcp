@@ -1,0 +1,59 @@
+{
+  "name": "utmach-mcp",
+  "version": "0.1.0",
+  "description": "Servidor MCP + CLI para conectar agentes de IA a EVEA Moodle y SIUTMACH (UTMACH)",
+  "author": "Terry Cuenca <https://github.com/tcuenca1>",
+  "homepage": "https://github.com/tcuenca1/utmach-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tcuenca1/utmach-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tcuenca1/utmach-mcp/issues"
+  },
+  "type": "module",
+  "bin": {
+    "utmach": "./dist/cli/index.js",
+    "utmach-mcp": "./dist/mcp/server.js"
+  },
+  "files": [
+    "dist",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev:mcp": "tsc && node dist/mcp/server.js",
+    "dev:cli": "tsc && node dist/cli/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "utmach",
+    "moodle",
+    "evea",
+    "siutmach"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "jszip": "^3.10.1",
+    "mammoth": "^1.9.0",
+    "pdfjs-dist": "^4.10.38",
+    "playwright-core": "^1.52.0",
+    "turndown": "^7.2.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/turndown": "^5.0.5",
+    "typescript": "^5.8.3"
+  }
+}
